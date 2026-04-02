@@ -1,1 +1,0 @@
-# starbuffet-django
