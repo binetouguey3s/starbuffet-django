@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Traiteurs</title>
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    {% block page_css %}{% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+    <header class="header">        
+        <div class="container">            
+            <div class="header-content">
+                <div class="img-logo">
+                    <a href="{% url 'liste_traiteurs' %}"><img src="{% static 'images/logo.png' %}" alt="logo" height="100" width="90"></a>
+                </div>
+                <button class="menu-toggle cacher">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav">
+                    <a href="{% url 'liste_traiteurs' %}" class="nav-link">Accueil</a>  
+                    <a href="#" class="nav-link">Restaurants</a>
+                    <a href="#" class="nav-link">Cours de Cuisine</a>
+                    <a href="{% url 'liste_traiteurs' %}" class="nav-link active">Traiteurs</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    {% if user.is_staff %}
+                        <a href="{% url 'ajouter_traiteur' %}" class="nav-link">Ajouter</a>
+                        <a href="{% url 'deconnexion' %}" class="nav-link">Déconnexion</a>
+                    {% else %}
+                        <a href="{% url 'connexion' %}" class="nav-link">Connexion</a>
+                    {% endif %}
+                </nav>
+                
+                <div class="button">
+                    {% if user.is_staff %}
+                        <a href="{% url 'ajouter_traiteur' %}" class="btn-login">Ajouter</a>
+                        <a href="{% url 'deconnexion' %}" class="btn-inscrire">Déconnexion</a>
+                    {% else %}
+                        <a href="{% url 'connexion' %}" class="btn-login">Connexion</a>
+                        <a href="#" class="btn-inscrire">Inscription</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% if messages %}
+        <div class="container">
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% block content %}
+    
+    {% endblock %}
+
+
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">À propos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Qui sommes-nous</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'liste_traiteurs' %}">Traiteurs</a></li>
+                        <li><a href="#">Restaurants</a></li>
+                        <li><a href="#">Cours de cuisine</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Espace Pro</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Devenir partenaire</a></li>
+                        <li><a href="{% url 'connexion' %}">Connexion</a></li>
+                        <li><a href="#">FAQ Professionnels</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Contact</h3>
+                    <p class="footer-text">Star Buffet</p>
+                    <p class="footer-text">Dakar, Sénégal</p>
+                    <p class="footer-text">Tél: +221 77 000 00 00</p>
+                    <p class="footer-text">Email: contact@starbuffet.com</p>
+                    
+                    <div class="social-links">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Star Buffet. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/nav.js' %}"></script>
+
+</body>
+</html>

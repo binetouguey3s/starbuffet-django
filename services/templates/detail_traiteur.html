@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% if traiteur.image %}
+    <div class="principal-detail" style="background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.259)), url('{{ traiteur.image.url }}');">
+    {% else %}
+    <div class="principal-detail" style="background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.259)), url('{% static 'images/default.jpg' %}');">
+    {% endif %}
+        <div class="container">
+            <div class="principal-content-detail">
+                <div class="rating-section">
+                    <i class="fa-solid fa-star"></i>
+                    <span class="valeur">0.0/5</span>
+                    {% if traiteur.est_actif %}
+                    <span class="verified">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Vérifié
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="content-layout">
+                <div class="left-column">
+                    <section class="info-section">
+                        <h2 class="section-title">À propos</h2>
+                        <p class="section-text">{{ traiteur.description }}</p>
+                    </section>
+
+                    <section class="info-section">
+                        <h2 class="section-title">Spécialités</h2>
+                        <div class="tags">
+                            <span class="tag">{{ traiteur.specialites }}</span>
+                        </div>
+                    </section>
+
+                    <section class="info-section">
+                        <h2 class="section-title">Services proposés</h2>
+                        <ul class="services-list">
+                            <li class="service-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Mariage</span>
+                            </li>
+                            <li class="service-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Anniversaire</span>
+                            </li>
+                            <li class="service-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Cocktails</span>
+                            </li>
+                            <li class="service-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Cuisine sur mesure</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="right-column">
+                    <section class="info-section">
+                        <h2 class="section-title">Contact</h2>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>{{ traiteur.adresse }}</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>{{ traiteur.telephone }}</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>{{ traiteur.email }}</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="info-section">
+                        <h2 class="section-title">Expérience</h2>
+                        <div class="experience-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>{{ traiteur.datedecreation.year }} ans d'expérience</span>
+                        </div>
+                    </section>
+
+                    <section class="info-section">
+                        <h2 class="section-title">Langues parlées</h2>
+                        <div class="tags">
+                            <span class="tag">Français</span>
+                            <span class="tag">Italien</span>
+                            <span class="tag">Arabe</span>
+                        </div>
+                    </section>
+
+                    <div class="contact-button-container">
+                        <button class="btn-contacter">
+                            <i class="fas fa-phone"></i>
+                            Contacter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

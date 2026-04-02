@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="form-page">
+        <div class="container">
+            <div class="form-wrapper">
+                <h1>Ajouter un traiteur</h1>
+                {% if not user.is_staff %}
+                    <p>Accès réservé aux admins.</p>
+                    <a href="{% url 'liste_traiteurs' %}" class="form-cancel">Retour à la liste</a>
+                {% else %}
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="form-actions">
+                            <button type="submit" class="form-btn">Enregistrer</button>
+                            <a href="{% url 'liste_traiteurs' %}" class="form-cancel">Annuler</a>
+                        </div>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

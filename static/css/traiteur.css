@@ -1,0 +1,392 @@
+body {
+    background-color: white;
+}
+
+/* ===== MOBILE FIRST ===== */
+
+/* Section principale */
+.principal {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/banner-caterers.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+}
+
+.principal-content {
+    text-align: center;
+    color: white;
+    padding: 0 15px;
+}
+
+.principal-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.principal-description {
+    font-size: 16px;
+    color: white;
+    line-height: 1.6;
+    max-width: 100%;
+}
+
+/* Filtres mobile */
+.filtres-section {
+    background-color: #FFF8E7;
+    padding: 30px 0;
+}
+
+.filtres-header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filtres-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.filtres-categorie {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.special-text, .statut-text {
+    width: 100%;
+}
+
+.filtre-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    color: #333333;
+    margin-top: 5px;
+}
+
+.btn-filtrer, .btn-reinitialiser {
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.btn-filtrer {
+    background-color: #FF6B35;
+    color: white;
+}
+
+.btn-reinitialiser {
+    background-color: white;
+    color: #000000;
+    border: 1px solid #ddd;
+}
+
+.btn-filtrer:hover {
+    background-color: #E55A2B;
+}
+
+/* Traiteurs mobile */
+.traiteurs-section {
+    background-color: #FFF8E7;
+    padding: 40px 0;
+}
+
+.traiteurs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.traiteur-card, .traiteur-card-1, .traiteur-card-2 {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.traiteur-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.traiteur-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.verifier {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 12px;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.info-traiteur {
+    padding: 20px;
+}
+
+.traiteur-experience {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.nom-traiteur {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.traiteur-specialites {
+    margin-bottom: 15px;
+}
+
+.specialite {
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.nationalite {
+    background-color: #eeeeee;
+    color: #000000;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.traiteur-contact {
+    margin-bottom: 20px;
+}
+
+.traiteur-phone {
+    font-size: 14px;
+    color: #161616;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bas-traiteur {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.traiteur {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.valeur {
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.btn-profil {
+    background-color: #1A1A2E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-profil:hover {
+    background-color: #2A2A3E;
+}
+
+/* Appel devenir Traiteur */
+.appel-traiteur {
+    background-image: linear-gradient(rgba(141, 98, 4, 0.6), rgba(107, 61, 1, 0.863)), url(../images/banner-head-accueil.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.appel-traiteur-content {
+    max-width: 100%;
+}
+
+.appel-traiteur-title {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.appel-traiteur-description {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.appel-devenir-traiteur {
+    background-color: white;
+    color: #FF6B35;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.appel-devenir-traiteur:hover {
+    background-color: #FF6B35;
+    color: white;
+}
+
+/*MEDIA QUERY TABLETTES */
+@media screen and (min-width: 768px) {
+    .filtres-categorie {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .special-text, .statut-text {
+        width: auto;
+    }
+    
+    .filtre-select {
+        width: 200px;
+    }
+    
+    .btn-filtrer, .btn-reinitialiser {
+        width: auto;
+    }
+    
+    .traiteurs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .traiteur-card, .traiteur-card-1, .traiteur-card-2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/*  MEDIA QUERY DESKTOP */
+@media screen and (min-width: 992px) {
+    .principal {
+        min-height: 400px;
+        padding: 80px 0;
+    }
+    
+    .principal-title {
+        font-size: 48px;
+        text-align: left;
+        margin-left: 0;
+    }
+    
+    .principal-description {
+        font-size: 20px;
+        text-align: left;
+        max-width: 600px;
+    }
+    
+    .principal-content {
+        text-align: left;
+    }
+    
+    .filtres-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .filtres-title {
+        text-align: left;
+        font-size: 24px;
+    }
+    
+    .filtres-categorie {
+        justify-content: flex-end;
+        gap: 15px;
+    }
+    
+    .traiteurs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .traiteur-card, .traiteur-card-1, .traiteur-card-2 {
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .traiteur-img {
+        width: 350px;
+        height: 250px;
+        flex-shrink: 0;
+    }
+    
+    .info-traiteur {
+        flex: 1;
+        padding: 25px;
+    }
+    
+    .appel-traiteur-title {
+        font-size: 22px;
+    }
+    
+    .appel-traiteur-description {
+        font-size: 18px;
+    }
+}
+
+/* MEDIA QUERY GRANDS ÉCRANS*/
+@media screen and (min-width: 1200px) {
+    .traiteur-card, .traiteur-card-1, .traiteur-card-2 {
+        max-width: 100%;
+    }
+    
+    .appel-traiteur-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}

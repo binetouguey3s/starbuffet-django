@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% comment %} recuperer le style de la page d'accueil et ajouter les styles spécifiques pour les formulaires et l'authentification {% endcomment %}
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="auth-page">
+        <div class="container">
+            <div class="auth-hero">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <h1>Connexion</h1>
+            </div>
+            <div class="auth-wrapper">
+                <form method="post" class="auth-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="auth-actions">
+                    <button type="submit" class="auth-btn">Se connecter</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

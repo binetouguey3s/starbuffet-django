@@ -1,0 +1,15 @@
+.auth-page {
+    background: linear-gradient(180deg, #fff8f1 0%, #ffffff 60%);
+    padding: 30px 0 60px;
+}
+
+.auth-hero {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-hero i {
+    font-size: 36px;
+    color: #E65100;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/traiteur.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="principal">
+        <div class="container">
+            <div class="principal-content">
+                <h1 class="principal-title">Nos Traiteurs</h1>
+                <p class="principal-description">
+                    Découvrez nos traiteurs professionnels pour vos événements, mariages, baptêmes et réceptions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="filtres-section">
+        <div class="container">
+            <div class="filtres-header">
+                <h2 class="filtres-title">Filtres</h2>
+                <div class="filtres-categorie">
+                    <div class="special-text">
+                        <h3>Specialites</h3>
+                        <select class="filtre-select">
+                            <option>Toutes les spécialités</option>
+                            <option>Patisserie</option>
+                            <option>Salé</option>
+                            <option>Dibiterie</option>
+                            <option>Jus</option>
+                        </select>
+                    </div>
+                    <div class="statut-text">
+                        <h3>Statut</h3>
+                        <select class="filtre-select">
+                            <option>Tous les traiteurs</option>
+                            <option>Vérifiés</option>
+                            <option>Non vérifiés</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-filtrer">
+                        <img src="{% static 'images/filtre.jpg' %}" alt="filter" width="20" height="15"> Filtrer
+                    </button>
+                    <button class="btn-reinitialiser">
+                        <img src="{% static 'images/reinitialise.jpg' %}" alt="reinitialiser" width="20" height="15"> Réinitialiser
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="traiteurs-section">
+        <div class="container">
+            <div class="traiteurs-grid">
+                {% for traiteur in traiteurs %}
+                <div class="traiteur-card">
+                    <div class="traiteur-img">
+                        {% if traiteur.image %}
+                            <img src="{{ traiteur.image.url }}" alt="{{ traiteur.nomcomplet }}" class="traiteur-image">
+                        {% else %}
+                            <img src="{% static 'images/default.jpg' %}" alt="{{ traiteur.nomcomplet }}" class="traiteur-image">
+                        {% endif %}
+                        {% if traiteur.est_actif %}
+                        <div class="verifier">Vérifié</div>
+                        {% endif %}
+                    </div>
+                    <div class="info-traiteur">
+                        <div class="traiteur-experience">{{ traiteur.datedecreation.year }} ans d'expérience</div>
+                        <h3 class="nom-traiteur">{{ traiteur.nomcomplet }}</h3>
+                        <div class="traiteur-specialites">
+                            <span class="specialite">Spécialités:</span>
+                            <span class="nationalite">{{ traiteur.specialites }}</span>
+                        </div>
+                        <div class="traiteur-contact">
+                            <span class="traiteur-phone"><i class="fa-solid fa-phone"></i> {{ traiteur.telephone }}</span>
+                        </div>
+                        <div class="bas-traiteur">
+                            <div class="traiteur">
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <span class="valeur">4.5</span>
+                            </div>
+                            <a href="{% url 'detail_traiteur' traiteur.id %}" class="btn-profil">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p>Aucun traiteur disponible pour le moment.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="appel-traiteur">
+        <div class="container">
+            <div class="appel-traiteur-content">
+                <h2 class="appel-traiteur-title">Vous êtes traiteur ?</h2>
+                <p class="appel-traiteur-description">
+                    Rejoignez notre réseau et développez votre activité événementielle !
+                </p>
+                <a href="#" class="appel-devenir-traiteur">Devenir traiteur</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

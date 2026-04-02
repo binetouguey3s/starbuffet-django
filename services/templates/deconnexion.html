@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="auth-page">
+        <div class="container">
+            <div class="auth-hero">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <h1>Déconnexion</h1>
+            </div>
+            <div class="auth-wrapper">
+                <p>Voulez-vous vraiment vous déconnecter ?</p>
+                <form method="post" class="auth-form">
+                {% csrf_token %}
+                <div class="auth-actions">
+                    <button type="submit" class="auth-btn">Se déconnecter</button>
+                    <a href="{% url 'liste_traiteurs' %}" class="auth-cancel">Annuler</a>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

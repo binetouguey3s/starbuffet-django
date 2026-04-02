@@ -1,0 +1,287 @@
+/* Mise en page spécifique à cette page */
+body {
+    background-color: #FFF3E0;
+    background-image: url(../images/pattern-background.svg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: var(--page-padding);
+    padding-right: var(--page-padding);
+}
+
+:root {
+    --page-padding: 60px;
+}
+
+/* Fin mise en page en commun avec les autres pages */
+
+/* Navigation gérée dans common.css */
+
+/* Style corps detail-traiteur */
+.principal-detail {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.259)), url(../images/salade-tomate.jpeg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 40px var(--page-padding) 0;
+    border-radius: 12px;
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.principal-content-detail {
+    padding: 40px;
+    width: 100%;
+}
+
+/* Section de notation */
+.rating-section {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.rating-section i.fa-star {
+    color: #FFD43B;
+    font-size: 20px;
+}
+
+.rating-section .valeur {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.rating-section .verified {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-section .verified i.fa-circle-check {
+    color: #4cea51;
+    font-size: 20px;
+}
+
+/* Contenu principal */
+.main-content {
+    padding: 50px var(--page-padding);
+}
+
+/* Layout en deux colonnes avec Grid */
+.content-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Colonnes */
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Sections d'information */
+.info-section {
+    background-color: white;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Section Contact */
+.right-column .info-section:nth-of-type(1),
+.right-column .info-section:nth-of-type(2),
+.right-column .info-section:nth-of-type(3) {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.section-text {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Tags (Spécialités et Langues) */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+/* Liste des services */
+.services-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 30px;
+    margin-top: 10px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: #333;
+}
+
+.service-item i {
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+/* Informations de contact */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-item i {
+    color: #666;
+    width: 24px;
+    font-size: 18px;
+}
+
+/* Expérience */
+.experience-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.experience-item i {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Bouton Contacter */
+.contact-button-container {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.btn-contacter {
+    background-color: #2b4fee;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+}
+
+.btn-contacter:hover {
+    background-color: #1a3dd6;
+    transform: translateY(-2px);
+}
+
+.btn-contacter i {
+    font-size: 20px;
+}
+
+/* Footer géré dans common.css */
+
+@media (max-width: 600px) {
+    :root {
+        --page-padding: 20px;
+    }
+
+    /* Image principale - detail-traiteur.html */
+     .principal-detail {
+        min-height: 300px;
+        margin: 15px var(--page-padding);
+    }
+
+    .rating-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* Layout - detail-traiteur.html */
+    .main-content {
+        padding-top: 30px;
+    }
+
+    .content-layout {
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .section-text {
+        font-size: 14px;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .tag {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .contact-item, .experience-item {
+        font-size: 14px;
+    }
+
+}
