@@ -28,12 +28,15 @@ Transformer le site statique en application web Django avec une architecture MVT
    - Connexion : `/connexion/`
    - Déconnexion : `/deconnexion/`
    - Ajouter : `/traiteurs/ajouter/`
+   - accueil : ` `
 2. Vues correspondantes dans `services/views.py` :
    - `liste_traiteurs`
    - `detail_traiteur`
    - `connexion`
    - `deconnexion`
    - `ajouter_traiteur`
+   - `accueil`
+
 
 **4) Templates**
 1. Base : `templates/base.html` (header/footer communs).
@@ -41,6 +44,7 @@ Transformer le site statique en application web Django avec une architecture MVT
 3. Détail : `services/templates/detail_traiteur.html`.
 4. Connexion / Déconnexion : `services/templates/connexion.html`, `services/templates/deconnexion.html`.
 5. Ajout : `services/templates/ajouter_traiteur.html`.
+6. Accueil : `services/templates/accueil.html`.
 
 **5) Authentification & Sécurité**
 1. Authentification Django native.
@@ -60,6 +64,7 @@ Transformer le site statique en application web Django avec une architecture MVT
    - `static/css/detail.css`
    - `static/css/forms.css`
    - `static/css/auth.css`
+   - `static/css/style.css`
 
 ## Installation & Lancement
 ```bash
@@ -75,8 +80,10 @@ python manage.py runserver
 ## Accès Admin
 - `/admin/` pour gérer les traiteurs
 - Seuls les comptes **staff/admin** peuvent ajouter via `/traiteurs/ajouter/`
+- Les comptes utilisateurs simples ne peuvent pas ajouter de traiteurs, ils verront un message "Accès réservé aux admins" s' ils tentent d'ajouter un traiteur via `/traiteurs/ajouter/`
 
 ## Vérifications finales
+0. Accueil accessible.
 1. Liste accessible (`/liste/`).
 2. Détail accessible (`/traiteurs/<id>/`).
 3. Connexion/déconnexion fonctionnelles.

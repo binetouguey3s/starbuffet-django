@@ -5,14 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Traiteurs</title>
+    <title>Star Buffet</title>
     <link rel="stylesheet" href="{% static 'css/common.css' %}">
     {% block page_css %}{% endblock %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
-
     <header class="header">        
         <div class="container">            
             <div class="header-content">
@@ -23,9 +22,9 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <nav class="nav">
-                    <a href="{% url 'liste_traiteurs' %}" class="nav-link">Accueil</a>  
-                    <a href="#" class="nav-link">Restaurants</a>
-                    <a href="#" class="nav-link">Cours de Cuisine</a>
+                    <a href="{% url 'accueil' %}" class="nav-link">Accueil</a>  
+                    <a href="{% url 'accueil' %}#restaurants" class="nav-link">Restaurants</a>
+                    <a href="{% url 'accueil' %}#cours" class="nav-link">Cours de Cuisine</a>
                     <a href="{% url 'liste_traiteurs' %}" class="nav-link active">Traiteurs</a>
                     <a href="#contact" class="nav-link">Contact</a>
                     {% if user.is_staff %}

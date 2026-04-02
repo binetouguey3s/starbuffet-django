@@ -59,3 +59,6 @@ def ajouter_traiteur(request):
     else:
         form = TraiteurForm()
     return render(request, 'ajouter_traiteur.html', {'form': form})
+
+def accueil(request):
+    return render(request, 'accueil.html')

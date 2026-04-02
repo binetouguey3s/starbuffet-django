@@ -233,7 +233,7 @@ body {
 }
 
 /* Appel devenir Traiteur */
-.appel-traiteur {
+.appel-traiteur { 
     background-image: linear-gradient(rgba(141, 98, 4, 0.6), rgba(107, 61, 1, 0.863)), url(../images/banner-head-accueil.jpg);
     background-size: cover;
     background-position: center;

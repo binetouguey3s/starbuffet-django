@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+ <section class="principale" id="accueil">
+        <div class="container">
+            <div class="principale-content">
+                <div class="principale-text">
+                    <h2 class="principale-titre">
+                        <span class="decouvre">Découvrez la </span>Cuisine Sénégalaise
+                    </h2>
+                    <p class="principale-description">
+                        Explorez les saveurs authentiques du Sénégal. Du Thiéboudienne aux <br> Alloco, 
+                        apprenez les secrets de la cuisine sénégalaise avec nos chefs <br>experts.
+                    </p>
+                </div>
+
+                <div class="plat">
+                    <div class="thieb">
+                        <div class="image-thieb">
+                            <img src="{% static 'images/thieboudieunerouge.JPG' %}" alt="Thieboudienne" class="thieb-image">
+                        </div>
+                        <div class="cours">
+                            Cours disponibles
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            
+    <section class="notes" id="note">
+        <div class="container">
+            <h2 class="section-title">Nos Statistiques</h2>
+            <div class="notes-grid">   
+                <div class="note-card">
+                    <div class="note-number">100+</div>
+                    <div class="note-titre">Restaurants Partenaires</div>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-number">30min</div>
+                    <div class="note-titre">Livraison Moyenne</div>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-number">50+</div>
+                    <div class="note-titre">Cours de Cuisine</div>
+                </div>
+                
+                <div class="note-card">
+                    <div class="note-number">4.8/5</div>
+                    <div class="note-titre">Note Moyenne</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="cours">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Services</h2>
+                <p class="section-soustitle">
+                    Découvrez nos services de qualité pour tous vos besoins culinaires
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 class="service-title">Trouver un restaurant</h3>
+                    <p class="service-description">
+                        Commandez vos plats préférés et faites-vous livrer rapidement à domicile.
+                    </p>
+                    <a href="#restaurants" class="lien1">Trouver maintenant →</a>
+                </div>
+                 <div class="service-card">
+                    <h3 class="service-title">Cours de cuisine</h3>
+                    <p class="service-description">
+                        Apprenez à cuisiner avec nos chefs professionnels en direct ou en replay.
+                    </p>
+                    <a href="#cours" class="lien2">Découvrir les cours →</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3 class="service-title">Services de traiteur</h3>
+                    <p class="service-description">
+                        Organisez vos événements avec nos services de traiteur professionnels.
+                    </p>
+                    <a href="{% url 'liste_traiteurs' %}" class="lien3">Voir les traiteurs →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section" id="restaurants">
+        <div class="container">
+            <h2 class="section-title">Trouver les restaurants les plus proches de vous?</h2>
+            
+            <div class="map-container">
+                <div class="map-placeholder" >
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.9384603834055!2d-17.471822324283565!3d14.716071285784109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172a5673be78b%3A0x7b3ed03c6c7bbbaa!2zTGUgTmRhasOp!5e0!3m2!1sen!2ssn!4v1766388343635!5m2!1sen!2ssn" 
+                        width="700" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="temoignages">
+        <div class="container">
+            <h2 class="section-title">
+                Ce que disent nos clients à propos des restaurants
+            </h2>
+            
+            <div class="temoignages-grid">
+                <div class="temoignage-card">
+                    <div class="temoignage-header">
+                        <div class="temoignage-avatar temoignage-avatar-vert">FD</div>
+                        <div class="temoignage-info">
+                            <h4 class="temoignage-name">Fatou Diop</h4>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="temoignage-text">
+                        "Vraiment parfait ! Les plats sont délicieux et la livraison rapide."
+                    </p>
+                </div>
+                
+                <div class="temoignage-card">
+                    <div class="temoignage-header">
+                        <div class="temoignage-avatar temoignage-avatar-orange">MD</div>
+                        <div class="temoignage-info">
+                            <h4 class="temoignage-name">Mamadou Diallo</h4>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="temoignage-text">
+                        "J'ai adoré les cours de cuisine. Les chefs sont très professionnels."
+                    </p>
+                </div>
+                
+                <div class="temoignage-card">
+                    <div class="temoignage-header">
+                        <div class="temoignage-avatar temoignage-avatar-jaune">AB</div>
+                        <div class="temoignage-info">
+                            <h4 class="temoignage-name">Aïssatou Ba</h4>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="temoignage-text">
+                        "Service de traiteur impeccable pour mon mariage. Tout était parfait !"
+                    </p>
+                </div>
+                
+                <div class="temoignage-card">
+                    <div class="temoignage-header">
+                        <div class="temoignage-avatar temoignage-avatar-vert">OS</div>
+                        <div class="temoignage-info">
+                            <h4 class="temoignage-name">Ousmane Sall</h4>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="temoignage-text">
+                        "La meilleure plateforme pour découvrir la cuisine sénégalaise."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Prêt à commencer ?</h2>
+                <p class="cta-subtitle">Commandez dès maintenant.</p>
+                <p class="cta-description">
+                    Découvrez nos restaurants partenaires et faites-vous livrer vos plats préférés.
+                </p>
+                <a href="#restaurants" class="cta-btn">Trouver un restaurant !</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

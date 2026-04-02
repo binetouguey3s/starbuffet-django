@@ -16,7 +16,8 @@
             <div class="auth-wrapper">
                 <p>Voulez-vous vraiment vous déconnecter ?</p>
                 <form method="post" class="auth-form">
-                {% csrf_token %}
+                    {% comment %} {% csrf_token %} sert à sécuriser le formulaire {% endcomment %}
+                {% csrf_token %} 
                 <div class="auth-actions">
                     <button type="submit" class="auth-btn">Se déconnecter</button>
                     <a href="{% url 'liste_traiteurs' %}" class="auth-cancel">Annuler</a>
